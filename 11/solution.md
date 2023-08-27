@@ -1,0 +1,3 @@
+ 1. Running etcdctl get foo shows an error: certificate has expired or is not yet valid: current time ... is after ..., it's clear the server time is one year ahead, to fix set the server time to the actual time, for ex: sudo date -s "last year" (Next "clue" gives the solution).
+
+2. Not easy to see unless looking for it (for example using tcpdump) but there's an iptables rule that redirects TCP traffic going to the etcd port :2379 into port :443 , and there's an Nginx server listening to that port: sudo /usr/sbin/iptables -t nat -L, deleting this rule will fix the remaining issue, for ex: sudo /usr/sbin/iptables -t nat -F
