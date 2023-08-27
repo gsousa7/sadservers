@@ -2,3 +2,4 @@ Description: A developer created a testing program that is continuously writing 
 This program is no longer needed. Find it and terminate it.
 
 Test: The log file hasn't changed in the last 6 seconds: `find /var/log/bad.log -mmin -0.1` (You don't need to know the details of this command).
+zxc
